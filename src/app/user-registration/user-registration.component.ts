@@ -7,6 +7,7 @@ declare function richText(val) :any
 @Component({
   selector: 'user-registration',
   templateUrl: './user.registration.component.html',
+  styleUrls: ['../app.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
   mobnumPattern = "^((\\+91-?)|0)?[0-9]{10}$"; 

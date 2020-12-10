@@ -21,17 +21,7 @@ user:any ={}
   ngOnInit(){
 
   }
-  checkpwd(){
-    if(this.user.password != this.user.confirmpassword){
-      this.isPwdNotMatched = true
-    }
-    else {
-      this.isPwdNotMatched = false
-    }
-  }
-  resetconfirmpwd(){
-    this.user.confirmpassword =''
-  }
+  
   onFormSubmit(form: NgForm) {
   
     if (form.invalid) {

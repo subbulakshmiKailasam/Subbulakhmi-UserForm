@@ -57,7 +57,7 @@
 
             <div class="form-group form-check">
                 <label for="address">Address
-            <textarea class="form-control" rows="5" id="address" name="address" [(ngModel)]="user.address" required #address="ngModel"></textarea>
+            <textarea class="form-control" rows="5" style="width:100%" id="address" name="address" [(ngModel)]="user.address" required #address="ngModel"></textarea>
             <div *ngIf="address.errors && userForm.submitted">
             <div *ngIf="address.errors.required">
                 <small style="color:red"> *this field is required.</small>

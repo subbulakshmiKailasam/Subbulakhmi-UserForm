@@ -8,6 +8,7 @@ import { UserDetailService } from './user-details.service';
 @Component({
   selector: 'user-details',
   templateUrl: './user-details.component.html',
+  styleUrls: ['../app.component.css']
 })
 export class UserDetailsComponent implements OnInit {
   users:any =[];
