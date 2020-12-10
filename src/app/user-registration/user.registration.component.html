@@ -1,0 +1,98 @@
+<div class="form" class="col-md-12 col-sm-12">
+    <div class="container">
+        <h2>User Registration Form</h2>
+        <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" placeholder="Enter First Name" name="firstName" required #firstName="ngModel">
+                <div *ngIf="firstName.errors && userForm.submitted">
+                    <div *ngIf="firstName.errors.required">
+                        <small style="color:red"> *this field is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" placeholder="Enter Last Name" name="lastName" required #lastName="ngModel">
+                <div *ngIf="lastName.errors && userForm.submitted">
+                    <div *ngIf="lastName.errors.required">
+                        <small style="color:red"> *this field is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" [pattern]="emailPattern" [(ngModel)]="user.email" placeholder="Enter email" name="email" #userEmail="ngModel" required>
+                <div *ngIf="userEmail.errors && userForm.submitted">
+                    <div *ngIf="!userEmail.errors.required && userEmail.errors.pattern">
+                        <small style="color:red"> Email is not valid.</small>
+
+                    </div>
+                    <div *ngIf="userEmail.errors.required">
+                        <small style="color:red"> *this field is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mobileno">Mobile No:</label>
+                <input type="Number" class="form-control" [(ngModel)]='user.mobileNumber' id="mobile" placeholder="Enter mobile no" name="mobile" #mobilenum="ngModel" [pattern]="mobnumPattern" required>
+                <div *ngIf="mobilenum.errors && userForm.submitted">
+                    <div *ngIf="!mobilenum.errors.required && mobilenum.errors.pattern">
+                        <small style="color:red"> Mobile number not valid.</small>
+                    </div>
+                    <div *ngIf="mobilenum.errors.required">
+                        <small style="color:red"> *this field is required.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-check">
+                <label for="gender">Gender
+            <input class="form-radio-input" type="radio" checked name="gender" value="male" [(ngModel)]="user.gender" > Male
+            <input class="form-radio-input" type="radio" name="gender" value="female" [(ngModel)]="user.gender" > Female
+           
+        
+    </label>
+            </div>
+
+            <div class="form-group form-check">
+                <label for="address">Address
+            <textarea class="form-control" rows="5" id="address" name="address" [(ngModel)]="user.address" required #address="ngModel"></textarea>
+            <div *ngIf="address.errors && userForm.submitted">
+            <div *ngIf="address.errors.required">
+                <small style="color:red"> *this field is required.</small>
+            </div>
+        </div>
+  </label>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" minlength="8" [(ngModel)]='user.password' placeholder="Enter password" name="pswd" #pwd="ngModel" (change)="resetconfirmpwd()" required>
+                <div *ngIf="pwd.errors && userForm.submitted">
+                    <div *ngIf="!pwd.errors.required && pwd.errors.minlength">
+                        <small style="color:red"> Minimum 8 characters required.</small>
+                    </div>
+                    <div *ngIf="pwd.errors.required">
+                        <small style="color:red"> *this field is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Confirm Password:</label>
+                <input type="password" class="form-control" id="pwd" minlength="8" [(ngModel)]='user.confirmpassword' placeholder="Enter password" name="cpwd" #cpwd="ngModel" (input)="checkpwd()">
+                <div *ngIf="cpwd.errors && userForm.submitted">
+                    <div *ngIf="!cpwd.errors.required &&cpwd.errors.minlength">
+                        <small style="color:red"> Minimum 8 characters required.</small>
+                    </div>
+                    <div *ngIf="cpwd.errors.required">
+                        <small style="color:red"> *this field is required.</small>
+                    </div>
+                </div>
+                <div *ngIf="isPwdNotMatched">
+                    <small style="color:red"> Password is not Matched</small>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

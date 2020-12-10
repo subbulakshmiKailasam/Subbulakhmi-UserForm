@@ -1,0 +1,14 @@
+<div class="container">
+    <table class="table table-responsive">
+        <tr>
+            <th>Id</th>
+            <th>User Name</th>
+            <th>Age</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.employee_name}}</td>
+            <td>{{user.employee_age}}</td>
+        </tr>
+    </table>
+</div>
