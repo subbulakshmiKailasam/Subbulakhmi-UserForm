@@ -13,7 +13,7 @@ import { AppRoutingModule } from './app.module.route';
 
 @NgModule({
   declarations: [
-    AppComponent,CompileDirective
+    AppComponent
   ],
   imports: [
     BrowserModule, FormsModule,CommonModule,AppRoutingModule
