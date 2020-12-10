@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { UserIdleModule } from 'angular-user-idle';
 
 import { AppComponent } from './app.component';
-import { CompileDirective } from './custom.directives';
+
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
